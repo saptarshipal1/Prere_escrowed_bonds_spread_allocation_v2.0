@@ -5,10 +5,8 @@ df=pd.read_excel('prere_esc_raw_data.xlsx')
 
 df=df.copy()
 
-df['AVERAGELIFEDATE'] = df['AVERAGELIFEDATE'].astype('datetime64[D]')
-df['MATURITY'] = df['MATURITY'].astype('datetime64[D]')
-df['REDEMPTION_DATE'] = df['REDEMPTION_DATE'].astype('datetime64[D]')
-df['CALLDATE'] = df['CALLDATE'].astype('datetime64[D]')
+df['MATURITY'] = pd.to_datetime(df['MATURITY'])
+
 
 df['Analysis']= 0
 

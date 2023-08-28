@@ -13,16 +13,15 @@ df=df.copy()
 
 def model_op(df):
 
-    df['AVERAGELIFEDATE'] = df['AVERAGELIFEDATE'].astype('datetime64[D]')
-    df['MATURITY'] = df['MATURITY'].astype('datetime64[D]')
-    df['REDEMPTION_DATE'] = df['REDEMPTION_DATE'].astype('datetime64[D]')
-    df['CALLDATE'] = df['CALLDATE'].astype('datetime64[D]')
+    df['MATURITY'] = pd.to_datetime(df['MATURITY'])
 
     df['Analysis']= 0
     
     prere_esc(df)
     
     return render_template('index.html',tables = [df.to_html()],titles =[''] )
+
+model_op(df)
     
 
 
