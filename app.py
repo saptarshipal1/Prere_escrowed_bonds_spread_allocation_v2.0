@@ -11,7 +11,7 @@ df=df.copy()
 
 @app.route('/')
 
-def model_op(df):
+def model_op():
 
     df['MATURITY'] = pd.to_datetime(df['MATURITY'])
 
@@ -21,8 +21,7 @@ def model_op(df):
     
     return render_template('index.html',tables = [df.to_html()],titles =[''] )
 
-model_op(df)
-    
+
 
 
 
